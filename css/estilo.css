@@ -1,0 +1,118 @@
+.titulo {
+    color: #ef4b00;
+    
+}
+
+.bienvenida {
+	padding-left: 20%;
+	padding-right: 10%;
+
+}
+
+.datos {
+	padding-left: 5%;
+	padding-right: 5%;
+
+}
+
+.login {
+	padding-left: 15%;
+	padding-right: 15%;
+
+}
+
+.terminos {
+	font-size: 15;
+	padding-left: 35%;
+	padding-right: 10%;
+}
+
+.boton {
+	padding-left: 45%;
+
+}
+
+.columna {
+	padding-left: 10px;
+	padding-right: 30px;
+}
+
+.flex {
+      -webkit-flex: 1 1 0%;
+          -ms-flex: 1 1 0%;
+              flex: 1 1 0%;
+      box-sizing: border-box;
+    }
+
+.chico {
+	font-size: 15;
+}
+
+.porcentaje {
+	font-size: 25;
+	font-weight: bold;
+}
+
+.inputdemoErrors .inputErrorsApp {
+  min-height: 48px; }
+
+.inputdemoErrors md-input-container > p {
+  font-size: 0.8em;
+  text-align: left;
+  width: 100%; 
+}
+
+
+
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+    border-color: #27837F;
+}
+
+
+
+md-input-container:not(.md-input-invalid).md-input-focused label {
+    color: #27837F;
+}
+
+
+md-input-container.md-select-focused {
+	border-color: #27837F;
+}
+
+md-checkbox.md-checked.check .md-icon {
+ background-color: #27837F;
+}
+
+md-select:not([disabled]):focus .md-select-value {
+	border-color: #27837F;
+}
+
+.fabSpeedDialdemoMoreOptions .md-fab-top-right {
+  top: 16px; }
+
+@media (max-device-width: 600px) {
+  .fabSpeedDialdemoMoreOptions .md-fab-top-right {
+    top: 9px;
+    right: 9px; } }
+
+.fabSpeedDialdemoMoreOptions .md-fab.demo-fab.trigger-fab:hover, .fabSpeedDialdemoMoreOptions .md-fab.demo-fab.trigger-fab.md-focused, .fabSpeedDialdemoMoreOptions .md-fab.demo-fab.action-fab:hover, .fabSpeedDialdemoMoreOptions .md-fab.demo-fab.action-fab.md-focused {
+  background-color: #333; }
+
+.fabSpeedDialdemoMoreOptions .md-fab.demo-fab.action-fab {
+  background-color: #aaa; }
+
+.fabSpeedDialdemoMoreOptions md-content div[flex="50"] {
+  padding: 15px; }
+
+.fabSpeedDialdemoMoreOptions md-fab-speed-dial {
+  margin-top: 89px; }
+  .fabSpeedDialdemoMoreOptions md-fab-speed-dial md-fab-trigger {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1); }
+  .fabSpeedDialdemoMoreOptions md-fab-speed-dial.md-scale.ng-hide-add.ng-hide-add-active, .fabSpeedDialdemoMoreOptions md-fab-speed-dial.md-fling.ng-hide-add.ng-hide-add-active {
+    display: flex !important; }
+  .fabSpeedDialdemoMoreOptions md-fab-speed-dial.md-scale.ng-hide md-fab-trigger, .fabSpeedDialdemoMoreOptions md-fab-speed-dial.md-fling.ng-hide md-fab-trigger {
+    transform: scale(0); }
+
+.fabSpeedDialdemoMoreOptions .intro {
+  padding-left: 5px; }

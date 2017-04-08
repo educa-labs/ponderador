@@ -1,0 +1,231 @@
+<md-toolbar class="md-menu-toolbar" style="width:  100%" >
+  <div class="md-toolbar-tools" style="background-color: #27837F">
+    <span flex="40"></span>
+    <center><img src="img/logo.png" style="padding-top: 10px; padding-bottom: 10px" height="100%"></center>
+    <span flex="40"></span>
+  </div>
+</md-toolbar>
+
+
+<div ng-controller="DemoCtrl as demo">
+  <md-fab-speed-dial ng-hide="demo.hidden" md-direction="left" md-open="demo.isOpen"
+                     class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': demo.hover }"
+                     ng-mouseenter="demo.isOpen=true" ng-mouseleave="demo.isOpen=false">
+  <md-fab-trigger>
+    <md-button aria-label="menu" class="md-fab md-warn">
+      <md-tooltip md-direction="top" md-visible="tooltipVisible">Menu</md-tooltip>
+        <md-icon md-svg-src="img/share.svg" aria-label="menu"></md-icon>
+    </md-button>
+  </md-fab-trigger>
+
+  <md-fab-actions>
+    <div ng-repeat="item in demo.items">
+      <md-button aria-label="{{item.name}}" class="md-fab md-raised md-mini"
+                  ng-click="demo.openDialog($event, item)">
+      <md-tooltip md-direction="{{item.direction}}" md-visible="tooltipVisible"
+                  md-autohide="false">
+                {{item.name}}
+      </md-tooltip>
+        <a ng-href="{{item.url}}" target="_blank">
+          <md-icon md-svg-src="{{item.icon}}" aria-label="{{item.name}}"></md-icon>
+        </a>
+      </md-button>
+    </div>
+  </md-fab-actions>
+  </md-fab-speed-dial>
+</div>
+
+<!-- Empieza Simulador -->
+<md-card class="page">
+  <md-content class="md-padding">
+    <p><center>Hola {{user.name}}! Simula tus puntajes y calcula tu posibilidad de entrar a la universidad que deseas a estudiar lo que deseas.</center></p>
+  </md-content>
+
+  <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center">
+
+  <div layout="row" layout-fill flex="20" style="height: 100%">
+    <div flex>
+      <!-- Columna ingresa tus puntajes -->
+      <h3>Ingresa tus puntajes</h3>
+
+      <form class="datos" name="forma">
+    
+        <!-- Input NEM -->
+        <md-input-container class="md-block">
+          <label><font color="#ff5930">NEM</font></label>
+          <input name="nem" ng-model="user.nem" type="number" required min="150" max="850">
+          <!-- Mensaje de error para NEM -->
+          <div ng-messages="forma.nem.$error" multiple md-auto-hide="false">
+            <div ng-message="min">
+              No pudo haberte ido tan mal :(
+            </div>
+
+            <div ng-message="max">
+              Tranquilo campeón, 850 es el máximo
+            </div>
+          </div>
+        </md-input-container>
+
+        <!-- Input Ranking -->
+        <md-input-container class="md-block">
+          <label><font color="#ff5930">Ranking</font></label>
+          <input name="ranking" ng-model="user.ran" type="number" required min="150" max="850">
+          <!-- Mensaje de error para Ranking -->
+          <div ng-messages="forma.ranking.$error" multiple md-auto-hide="false">
+            <div ng-message="min">
+              No pudo haberte ido tan mal :(
+            </div>
+
+            <div ng-message="max">
+              Tranquilo campeón, 850 es el máximo
+            </div>
+          </div>
+        </md-input-container>
+
+
+        <!-- Input Mate -->
+        <md-input-container class="md-block">
+          <label><font color="#ff5930">Mate</font></label>
+          <input name="mate" ng-model="user.mat" type="number" required min="150" max="850">
+          <!-- Mensaje de error para Mate -->
+          <div ng-messages="forma.mate.$error" multiple md-auto-hide="false">
+            <div ng-message="min">
+              No pudo haberte ido tan mal :(
+            </div>
+
+            <div ng-message="max">
+              Tranquilo campeón, 850 es el máximo
+            </div>
+          </div>
+        </md-input-container>
+
+        <!-- Input Lenguaje -->
+        <md-input-container class="md-block">
+          <label><font color="#ff5930">Lenguaje</font></label>
+          <input name="leng" ng-model="user.len" type="number" required min="150" max="850">
+          <!-- Mensaje de error para Lenguaje -->
+          <div ng-messages="forma.len.$error" multiple md-auto-hide="false">
+            <div ng-message="min">
+              No pudo haberte ido tan mal :(
+            </div>
+
+            <div ng-message="max">
+              Tranquilo campeón, 850 es el máximo
+            </div>
+          </div>
+        </md-input-container>
+
+      </form>
+        <!-- Input Ciencias -->
+        <md-input-container class="md-block">
+          <label><font color="#ff5930">Ciencias</font></label>
+          <input name="ciencias" ng-model="user.cie" type="number"  min="150" max="850">
+          <!-- Mensaje de error para Ciencias -->
+          <div ng-messages="forma.ciencias.$error" multiple md-auto-hide="false">
+            <div ng-message="min">
+              No pudo haberte ido tan mal :(
+            </div>
+
+            <div ng-message="max">
+              Tranquilo campeón, 850 es el máximo
+            </div>
+          </div>
+        </md-input-container>
+
+        <!-- Input Historia -->
+        <md-input-container class="md-block">
+          <label><font color="#ff5930">Historia</font></label>
+          <input name="his" ng-model="user.his" type="number"  min="150" max="850">
+          <!-- Mensaje de error para Historia -->
+          <div ng-messages="forma.his.$error" multiple md-auto-hide="false">
+            <div ng-message="min">
+              No pudo haberte ido tan mal :(
+            </div>
+
+            <div ng-message="max">
+              Tranquilo campeón, 850 es el máximo
+            </div>
+          </div>
+        </md-input-container>
+
+
+    </div>
+  </div>
+
+  <div layout="row" layout-fill flex="50" style="height: 100%">
+    <div flex>
+      <h3><center>Selecciona una Universidad y Carrera</center></h3>
+      <!-- Input Universidades -->
+      <md-input-container class="md-block">
+        <label>Universidad</label>
+        <md-icon md-svg-src="img/ues.svg" style="color:grey" class="name"></md-icon>
+        <md-select name="universidad" ng-model="user.uid" required ">
+          <md-option ng-repeat="item in ues" value="{{item.uid}}" ng-model="uid">{{item.name}}</md-option>
+        </md-select>
+      </md-input-container>
+      <br>
+      <!-- Input Carreras -->
+      <md-input-container class="md-block">
+        <label>Carrera</label>
+        <md-icon md-svg-src="img/carreras.svg" style="color:grey" class="name"></md-icon>
+        <md-select name="carrera" ng-model="user.cid" required ng-change="getSubject()" md-on-open="getCarreras()">
+          <md-option ng-repeat="item in carreras" value="{{item.cid}}" ng-model="uid">{{item.name}}</md-option>
+        </md-select>
+      </md-input-container>
+      <h3>{{submsg}}</h3>
+
+      <!-- Boton de calcular -->
+      <center><md-button class="md-raised md-warn" ng-click="simular(forma)">Calcular</md-button></center>
+
+    </div>
+  </div>
+
+  <div layout="column" layout-fill flex="30" style="height: 100%">
+    <div flex>  
+      <h3><center>Resultados</center></h3>
+      <div layout="row" layout-sm="column">
+        <div flex>
+          <font class="chico">Nem:</font><br>
+          <font class="porcentaje" color="#ff5930">{{result.nem}}%</font>
+        </div>
+        <div flex>
+          <font class="chico">Ran:</font><br>
+          <font class="porcentaje" color="#ff5930">{{result.ran}}%</font>
+        </div>
+        <div flex>
+          <font class="chico">Mat:</font><br>
+          <font class="porcentaje" color="#ff5930">{{result.mat}}%</font>
+        </div>
+        <div flex>
+          <font class="chico">Len:</font><br>
+          <font class="porcentaje" color="#ff5930">{{result.len}}%</font>
+        </div>
+        <div flex>
+          <font class="chico">Opt:</font><br>
+          <font class="porcentaje" color="#ff5930">{{result.opt}}%</font>
+        </div>
+      </div>
+      <br><br>
+ 
+      <div layout="row" layout-sm="column">
+        <div flex>
+          <font class="chico">Corte 2016:</font><br>
+          <center><font class="porcentaje">{{result.corte}}</font></center>
+        </div>
+        <div flex>
+          <font class="chico">Tu puntaje:</font><br>
+          <center><font class="porcentaje" color="#ff5930">{{result.pond}}</font></center>
+        </div>
+        <div flex>
+          <font class="chico">Diferencia:</font><br>
+          <center><font class="porcentaje">{{result.dif}}</font></center>
+        </div>
+      </div>
+      <br><br>
+    </div>
+      
+
+  </div>
+
+  </md-content>
+</md-card>

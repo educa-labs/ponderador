@@ -1,0 +1,45 @@
+<md-toolbar class="md-menu-toolbar" style="width:  100%" >
+  <div class="md-toolbar-tools" style="background-color: #27837F">
+    <span flex="40"></span>
+    <center><img src="img/logo.png" style="padding-top: 10px; padding-bottom: 10px" height="100%"></center>
+    <span flex="40"></span>
+  </div>
+</md-toolbar>
+
+<!-- Titulo bienvenida a la esquina derecha -->
+<md-content flex layout-padding class="page-container">
+
+<md-card class="page">
+	<center><h3 class="md-headline">Login Simulador - InfoPSU</h3></center>
+  	<form class="login" name="forma">
+
+  		<md-input-container class="md-block">
+	        <label>Usuario </label>
+	        <md-icon md-svg-src="img/person.svg" style="color:grey" class="name"></md-icon>
+	        <input required="" type="text" name="username" ng-model="resultados.user">
+      	</md-input-container>
+
+      	<md-input-container class="md-block">
+	        <label>Contraseña </label>
+	        <md-icon md-svg-src="img/pass.svg" style="color:grey" class="name"></md-icon>
+	        <input required="" type="password" name="username" ng-model="resultados.pass">
+      	</md-input-container>
+	</form>
+
+	
+
+  <!-- Datos de los alumnos acá -->
+  
+
+  <div style="padding-top: 0px">
+    <center>
+	    <md-button class="md-raised md-warn" ng-click="saberresultados()">Continuar</md-button>
+		<md-button class="md-raised md-warn" ng-click="getContador()">Contador</md-button>
+      	<h1>NÚMERO DE ALUMNOS</h1>
+      	<h2>{{contador}}</h2>
+    </center>
+  </div>
+  <br><br>
+
+</md-card>
+</md-content>
